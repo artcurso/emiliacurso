@@ -1,0 +1,256 @@
+/* RESET E ESTILOS BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0a0a0c 0%, #1a0826 50%, #340c47 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* IMAGEM DE FUNDO COM TRANSPARÊNCIA (MISTURA) */
+.bg-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Substitua a URL abaixo pelo caminho correto da imagem enviada */
+  background-image: url('img/fundo.jpg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15; /* Transparência para mesclar com o gradiente */
+  mix-blend-mode: overlay; /* Efeito de fusão moderna */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* BOTÃO FLUTUANTE / SUSPENSO */
+.btn-floating {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.5);
+  z-index: 999;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-floating:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(236, 72, 153, 0.7);
+}
+
+/* HERO SECTION & VSL */
+.hero {
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.badge {
+  background: rgba(168, 85, 247, 0.2);
+  border: 1px solid #a855f7;
+  color: #d8b4fe;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 20px 0 15px;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+/* CONTAINERS DE VÍDEO RESPONSIVO */
+.vsl-wrapper {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 30px rgba(168, 85, 247, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.vsl-container {
+  position: relative;
+  padding-bottom: 56.25%; /* Aspect Ratio 16:9 */
+  height: 0;
+}
+
+.vsl-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* BOTÕES PRINCIPAIS */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  color: #ffffff;
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
+}
+
+.btn-large {
+  font-size: 1.3rem;
+  padding: 20px 48px;
+}
+
+/* SEÇÃO SOBRE */
+.about-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.about-section h2, .testimonials-section h2, .cta-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-align: left;
+}
+
+.feature-card h3 {
+  color: #d8b4fe;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.feature-card p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* PROVA SOCIAL / DEPOIMENTOS */
+.testimonials-section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.section-sub {
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CALL TO ACTION FINAL */
+.cta-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: rgba(168, 85, 247, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 24px;
+  margin: 40px 0;
+}
+
+.cta-section p {
+  margin-bottom: 30px;
+  color: #cbd5e1;
+}
+
+.insta-link {
+  color: #ec4899;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVIDADE PARA CELULARES */
+@media (max-width: 768px) {
+  h1 { font-size: 1.8rem; }
+  .btn-floating {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+    text-align: center;
+  }
+}
