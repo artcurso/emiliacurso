@@ -191,9 +191,10 @@ h1 {
   margin-bottom: 40px;
 }
 
+/* Alterado para GRID flexível que aceita rolagem lateral quando necessário */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* Mantém 3 colunas lado a lado por padrão */
   gap: 20px;
 }
 
@@ -247,10 +248,26 @@ footer {
 /* RESPONSIVIDADE PARA CELULARES */
 @media (max-width: 768px) {
   h1 { font-size: 1.8rem; }
+  
   .btn-floating {
     bottom: 15px;
     right: 15px;
     left: 15px;
     text-align: center;
+  }
+
+  /* Ajuste das provas sociais para o Mobile */
+  .testimonials-grid {
+    display: flex; /* Mudamos para flex para permitir o transbordo suave lateral */
+    overflow-x: auto; /* Permite deslizar com o dedo para os lados */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Rolagem macia no iOS */
+    padding-bottom: 15px; /* Espaço para não cortar a sombra dos cards */
+    gap: 15px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 75%; /* Cada card ocupa 75% da tela, deixando um pedaço do próximo visível */
+    scroll-snap-align: center; /* Centraliza o card na tela ao deslizar */
   }
 }
